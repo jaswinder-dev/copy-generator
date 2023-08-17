@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+/* colours used */
+:root {
+    --white: #fff;
+    --black: #000;
+    --selected: #baccff;
+    --royalblue: #4169e1;
+    --lightRed: #ff2424;
+    --lightGreen: #239623;
+    --darkGray: #808080;
+    --lightGray: #d1d1d1;
+    --lighterGray: #f0f0f0;
+    --inputGray: #c7c7c7;
+}
+
+.selected {
+    background-color: var(--selected);
+    padding: 4px 0;
+    color: var(--white);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #252525;
+}
+
+.container {
+    width: min(900px, 100%);
+    background-color: var(--white);
+    padding: 2em 1em;
+}
+
+.heading {
+    text-align: center;
+    color: var(--royalblue);
+}
+
+.copyArea {
+    width: 100%;
+    padding: 1em 2em;
+}
+
+.copyArea .genertedCopies {
+    min-height: 200px;
+    max-height: 200px;
+    overflow: auto;
+    font-size: 14px;
+    color: var(--darkGray);
+    padding: 3em 1em;
+    background-color: var(--lighterGray);
+}
+
+/* will be used to show errors using javascript */
+.copyArea .message {
+    text-align: center;
+    padding: 1em;
+    color: var(--white);
+    background-color: var(--lightRed);
+    display: none;
+}
+
+.copyArea .message p {
+    font-size: 18px;
+}
+
+.copyArea .copies ul {
+    list-style-type: none;
+}
+
+.copyArea .copies ul li {
+    margin-bottom: 0.5em;
+}
+
+/* default copy (indicator) */
+.copyArea ul li h2 {
+    color: var(--lightGray);
+}
+
+.copyArea .buttons {
+    text-align: end;
+    padding: 1em 0;
+}
+
+.copyArea .buttons button {
+    border: 0;
+    outline: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0.5em 2em;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.copyArea .buttons button:hover {
+    transform: scale(0.9);
+}
+
+.copyArea .buttons .copyBtn {
+    background-color: var(--lightGreen);
+    position: relative;
+}
+
+/* this will work as tooltip */
+.copyArea .buttons .copyBtn span {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: none;
+    width: 200px;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0.7em 1em;
+    border-radius: 4px;
+}
+
+.copyArea .buttons .copyBtn span::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-color: var(--black);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.copyArea .buttons .resetBtn {
+    background-color: var(--lightRed);
+}
+
+.commandArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.commandArea input {
+    width: 48%;
+    padding: 0.5em 1em;
+    border: 0;
+    outline: 0;
+    background-color: var(--inputGray);
+}
+
+.generateCopiesBtn {
+    text-align: center;
+    padding: 1em 0;
+}
+
+.generateCopiesBtn button {
+    width: 100%;
+    padding: 0.8em 0;
+    border: 0;
+    outline: 2px solid transparent;
+    background-color: var(--royalblue);
+    color: var(--white);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.generateCopiesBtn button:hover {
+    background-color: var(--white);
+    outline: 2px solid var(--royalblue);
+    color: var(--royalblue);
+}

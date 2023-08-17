@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy generatator | CodeX</title>
+
+    <!-- custom style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container"> <!--container starts-->
+
+        <div class="heading">
+            <h1>Copy Generator</h1>
+        </div>
+
+        <div class="copyArea">
+
+            <div class="genertedCopies">
+
+                <div class="message"></div>
+                <!--will be used to show error messages, content will be added using javascipt.-->
+
+                <div class="copies">
+                    <ul>
+                        <li>
+                            <h2>//Generate copies</h2>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="copyBtn">Copy to clipboard
+                    <span></span> <!--will be used as tooltip, conent will be added using javascript.-->
+                </button>
+                <button class="resetBtn">Reset</button>
+
+            </div>
+
+            <div class="commandArea">
+
+                <input type="text" class="textToCopy" id="textToCopy" placeholder="Paste text">
+                <input type="number" class="howManyCopies" id="howManyCopies"
+                    placeholder="How many copies to be generated ?">
+
+            </div>
+
+            <div class="generateCopiesBtn">
+                <button class="generateCopies">Generate copies</button>
+            </div>
+
+        </div>
+
+    </div> <!--container ends-->
+
+    <!-- custom javascript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
